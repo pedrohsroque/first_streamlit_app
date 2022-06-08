@@ -61,9 +61,9 @@ if sl.button('Get fruit list'):
     my_cnx.close()
     sl.dataframe(my_data_rows)
 
+fruit_to_add = sl.text_input('What fruit would you like to add?')
 if sl.button('Add fruit to list'):
     my_cnx = snowflake.connector.connect(**sl.secrets ["snowflake" ])
-    fruit_to_add = sl.text_input('What fruit would you like to add?')
     added = insert_row_to_snowflake(fruit_to_add)
     my_cnx.close()
     sl.write(added)
