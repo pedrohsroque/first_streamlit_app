@@ -23,6 +23,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Showing the list
 sl.dataframe(fruits_to_show)
 
+
 sl.header('Fruityvice Fruit Advice')
 
 fruit_choice = sl.text_input('What fruit would you like information about?')
@@ -40,3 +41,6 @@ my_data_rows = my_cur.fetchall()
 
 sl.header("The fruit load list contains")
 sl.dataframe(my_data_rows)
+
+fruit_to_add = sl.text_input('What fruit would you like to add?')
+sl.write('Thanks for adding:', fruit_to_add)
