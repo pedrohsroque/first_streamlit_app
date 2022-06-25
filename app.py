@@ -15,10 +15,12 @@ def get_fruit_load_list():
         my_cur.execute("SELECT * from fruit_load_list")
         return my_cur.fetchall()
 
+
 def insert_row_to_snowflake(new_fruit):
     with my_cnx.cursor() as my_cur:
         my_cur.execute("insert into fruit_load_list values ('" + new_fruit + "')")
         return 'Thanks for adding:', new_fruit
+
 
 sl.title('My Parents New Health Diner')
 
